@@ -31,3 +31,4 @@ VALUES ('Filme'), ('Serie');
 
 INSERT INTO MeiosVeiculacao (MeioVeiculacao)
 VALUES ('Netflix'), ('Cinema'), ('Amazon');
+

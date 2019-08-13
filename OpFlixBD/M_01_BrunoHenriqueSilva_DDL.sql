@@ -44,3 +44,6 @@ CREATE TABLE OndeLanca(
 	IdFilmeSerie INT FOREIGN KEY REFERENCES FilmesSeries(IdFilmeSerie)	
 	,IdMeioVeiculacao INT FOREIGN KEY REFERENCES MeiosVeiculacao(IdMeioVeiculacao)
 );
+
+ALTER TABLE TipoUsuarios 
+ALTER COLUMN TipoUsuario VARCHAR(255) NOT NULL;

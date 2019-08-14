@@ -1,6 +1,11 @@
-CREATE DATABASE M_OpFlix;
+CREATE DATABASE M_OpFlixFinal;
 
-USE M_OpFlix;
+USE M_OpFlixFinal;
+
+CREATE TABLE TipoUsuarios(
+	IdTipoUsuario INT PRIMARY KEY IDENTITY NOT NULL
+	,TipoUsuario VARCHAR(255) NOT NULL
+);
 
 CREATE TABLE Usuarios(
 	IdUsuario INT PRIMARY KEY IDENTITY NOT NULL
@@ -10,24 +15,9 @@ CREATE TABLE Usuarios(
 	,IdTipoUsuario INT FOREIGN KEY REFERENCES TipoUsuarios(IdTipoUsuario)
 );
 
-CREATE TABLE TipoUsuarios(
-	IdTipoUsuario INT PRIMARY KEY IDENTITY NOT NULL
-	,TipoUsuario VARCHAR(1) NOT NULL DEFAULT(2) 
-);
-
 CREATE TABLE Categorias(
 	IdCategoria INT PRIMARY KEY IDENTITY NOT NULL 
 	,Categoria VARCHAR(255) NOT NULL UNIQUE
-);
-
-CREATE TABLE FilmesSeries(
-	IdFilmeSerie INT PRIMARY KEY IDENTITY NOT NULL
-	,Titulo VARCHAR(255) NOT NULL UNIQUE
-	,Sinopse TEXT 
-	,IdCategoria INT FOREIGN KEY REFERENCES Categorias(IdCategoria)
-	,TempoDuracao VARCHAR(10) NOT NULL
-	,IdTipoFilmeSerie INT FOREIGN KEY REFERENCES TipoFilmesSeries(IdTipoFilmeSerie) 
-	,DataLancamento DATETIME NOT NULL
 );
 
 CREATE TABLE TipoFilmesSeries(
@@ -45,5 +35,13 @@ CREATE TABLE OndeLanca(
 	,IdMeioVeiculacao INT FOREIGN KEY REFERENCES MeiosVeiculacao(IdMeioVeiculacao)
 );
 
-ALTER TABLE TipoUsuarios 
-ALTER COLUMN TipoUsuario VARCHAR(255) NOT NULL;
+CREATE TABLE FilmesSeries(
+	IdFilmeSerie INT PRIMARY KEY IDENTITY NOT NULL
+	,Titulo VARCHAR(255) NOT NULL UNIQUE
+	,Sinopse TEXT 
+	,IdCategoria INT FOREIGN KEY REFERENCES Categorias(IdCategoria)
+	,TempoDuracao VARCHAR(10) NOT NULL
+	,IdTipoFilmeSerie INT FOREIGN KEY REFERENCES TipoFilmesSeries(IdTipoFilmeSerie) 
+	,DataLancamento DATETIME NOT NULL
+);
+

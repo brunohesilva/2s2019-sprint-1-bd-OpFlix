@@ -35,7 +35,7 @@ CREATE TABLE OndeLanca(
 	,IdMeioVeiculacao INT FOREIGN KEY REFERENCES MeiosVeiculacao(IdMeioVeiculacao)
 );
 
-CREATE TABLE FilmesSeries(
+CREATE TABLE FilmesSerie(
 	IdFilmeSerie INT PRIMARY KEY IDENTITY NOT NULL
 	,Titulo VARCHAR(255) NOT NULL UNIQUE
 	,Sinopse TEXT 
@@ -44,4 +44,6 @@ CREATE TABLE FilmesSeries(
 	,IdTipoFilmeSerie INT FOREIGN KEY REFERENCES TipoFilmesSeries(IdTipoFilmeSerie) 
 	,DataLancamento DATETIME NOT NULL
 );
+
+
 

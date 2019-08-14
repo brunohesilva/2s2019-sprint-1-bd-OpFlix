@@ -8,3 +8,13 @@ SELECT * FROM MeiosVeiculacao;
 SELECT * FROM FilmesSeries;
 SELECT * FROM OndeLanca;
 
+CREATE PROCEDURE BuscaLinhas
+@QuantidadesTuplas VARCHAR(200)
+AS 
+SELECT COUNT(*)
+FROM FilmesSeries
+WHERE IdFilmeSerie >= 1
+
+EXECUTE BuscaLinhas '1';
+DROP PROCEDURE BuscaLinhas;
+

@@ -1,11 +1,11 @@
 USE M_OpFlixFinal;
 
-SELECT * FROM TipoUsuarios;
-SELECT * FROM Usuarios;
+SELECT * FROM TipoUsuarios ORDER BY IdTipoUsuario;
+SELECT * FROM Usuarios ORDER BY IdUsuario;
 SELECT * FROM Categorias ORDER BY IdCategoria;
-SELECT * FROM TipoFilmesSeries;
+SELECT * FROM TipoFilmesSeries ORDER BY IdTipoFilmeSerie;
 SELECT * FROM MeiosVeiculacao ORDER BY IdMeioVeiculacao;
-SELECT * FROM Lancamentos;
+SELECT * FROM Lancamentos ORDER BY IdFilmeSerie;
 SELECT * FROM OndeLanca;
 
 CREATE PROCEDURE BuscaLinhas
